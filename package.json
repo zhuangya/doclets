@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "standard && istanbul cover _mocha -- --recursive test",
-    "test_nocover": "mocha  test"
+    "test_nocover": "mocha  test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [
     "jsdoc",
@@ -35,7 +37,7 @@
     "github": "^0.2.4",
     "github-webhook-handler": "^0.5.0",
     "glob": "^7.0.3",
-    "helmet": "^1.1.0",
+    "helmet": "^3.6.1",
     "jade": "^1.11.0",
     "js-yaml": "^3.5.5",
     "jsdoc": "jsdoc3/jsdoc#407bd470cde2dcb2745c217411fe8f9406cb694d",
@@ -54,7 +56,8 @@
     "recursive-readdir-sync": "^1.0.6",
     "sync-exec": "^0.6.2",
     "underscore": "^1.8.3",
-    "uuid": "^2.0.1"
+    "uuid": "^2.0.1",
+    "snyk": "^1.30.1"
   },
   "devDependencies": {
     "acme-jsdoc-example": "lipp/acme-jsdoc-example",
@@ -71,5 +74,6 @@
     "ignore": [
       "fixtures/"
     ]
-  }
+  },
+  "snyk": true
 }
